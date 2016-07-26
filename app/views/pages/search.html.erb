@@ -1,1 +1,26 @@
 <h1>This is the homepage and its bloody working!</h1>
+<nav>
+  <a href="#">Home</a>
+</nav>
+<div id="main">
+  
+</div>
+<script id="appView" type="text/template">
+  <h1> Search Flights </h1>
+  <div id="search">
+    <input type="text" name="origin" id="origin" placeholder="Source">
+    <input type="text" name="destination" id="destination" placeholder="Destination">
+    <button>Search</button>
+  </div>
+
+
+  <ul id="posts">
+
+  </ul>
+</script>
+
+<script id="postView" type="text/template">
+  <h1>{{= title }}</h1>
+  <h2>By {{= author }} </h2>
+  <p>{{= post}}</p>
+</script>
