@@ -4,7 +4,7 @@ app.AppView = Backbone.View.extend({
     el: '#main', //This div has not yet been created
 
     render: function() {
-        var content = $('#appview').html();
+        var content = $('#appView').html();
 
         this.$el.html(content);
 
