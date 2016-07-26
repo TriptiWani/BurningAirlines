@@ -1,7 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Airplane.destroy_all;
+Airplane.create(:name => '757',:rows => 4, :columns => 6);
+Airplane.create(:name => '747',:rows => 10, :columns => 8);
+
+Flight.destroy_all;
+Flight.create(:number=>23, :origin=>'JFK' ,:destination=>'SFO' , :date =>'20/10/2016');
+Flight.create(:number=>87, :origin=>'JFK' ,:destination=>'LAX' , :date =>'10/08/2016');
+
+User.destroy_all;
+User.create(:name=>'Tiger' , :email =>'tiger@ga.com', :password =>'chicken',:password_confirmation =>'chicken' ,:isAdmin => true);
+User.create(:name=>'Luke' , :email =>'luke@ga.com', :password =>'chicken',:password_confirmation =>'chicken');
