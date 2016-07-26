@@ -9,13 +9,22 @@
 <body>
   <nav>
     <ul class="nav nav-tabs options">
-      <li role="presentation" class="<%= 'active' if params[:controller] == 'controller3' %>">
-          <%= link_to 'Create account <span class="glyphicon glyphicon-user" aria-hidden="true"></span>'.html_safe , new_user_path %>
-      </li>
-      <li role="presentation" class="<%= 'active' if params[:controller] == 'controller4' %>">
-        <%= link_to 'Log In <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>'.html_safe,new_user_path %>
-      </li>
-      <li role="presentation" class="<%= 'active' if params[:controller] == 'controller2' %>">
+      <% if !(@current_user.present?) %>
+        <li role="presentation" class="<%= 'active' if params[:controller] == 'controller1' %>">
+            <%= link_to 'Create account <span class="glyphicon glyphicon-user" aria-hidden="true"></span>'.html_safe , new_user_path %>
+        </li>
+        <li role="presentation" class="<%= 'active' if params[:controller] == 'controller2' %>">
+          <%= link_to 'Log In <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>'.html_safe,login_path %>
+        </li>
+      <% else %>
+        <li role="presentation" class="<%= 'active' if params[:controller] == 'controller3' %>">
+          <%= link_to 'Logout <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>'.html_safe,login_path,:method => 'delete' %>
+        </li>
+        <li role="presentation" class="<%= 'active' if params[:controller] == 'controller4' %>">
+          <%= link_to @current_user.name,user_path(@current_user.id) %>
+        </li>
+      <% end %>
+      <li role="presentation" class="<%= 'active' if params[:controller] == 'controller5' %>">
           <%= link_to 'Contact Us <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>'.html_safe ,contact_us_path %>
       </li>
     </ul>

@@ -1,8 +1,8 @@
 var app = app || {};
 
 app.Flights = Backbone.Collection.extend ({
-  root: '/flights',
-  defaults: app.Flight,
+  url: '/flights',//updated the root to url and modified the name of the collection.js to Flights
+  model: app.Flight,
 
   initialize: function() {
     this.on('add', function () {

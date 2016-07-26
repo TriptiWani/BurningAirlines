@@ -3,7 +3,7 @@
   <a href="#">Home</a>
 </nav>
 <div id="main">
-  
+
 </div>
 <script id="appView" type="text/template">
   <h1> Search Flights </h1>
@@ -14,13 +14,15 @@
   </div>
 
 
-  <ul id="posts">
+  <ul id="flights">
 
   </ul>
 </script>
 
-<script id="postView" type="text/template">
-  <h1>{{= title }}</h1>
-  <h2>By {{= author }} </h2>
-  <p>{{= post}}</p>
+<script id="flightView" type="text/template">
+  <h1>{{= number }} Details</h1>
+  <h2>Origin: {{= origin }} </h2>
+  <h2>Destination: {{= destination }} </h2>
+  <h3>Date: {{= date}}</h3>
+  <p>Plane Layout:</p>
 </script>

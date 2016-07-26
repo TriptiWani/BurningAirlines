@@ -15,5 +15,17 @@
   <%= @airplane.columns %>
 </p>
 
-<%= link_to 'Edit', edit_airplane_path(@airplane) %> |
-<%= link_to 'Back', airplanes_path %>
+<div id="plane" class="col-xs-offset-4 col-md-offset-4 col-xs-4 col-md-4">
+  <% @airplane.columns.times do |c| %>
+    <div class="row">
+      <% @airplane.rows.times do |r| %>
+        <div class="seat"></div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<div class="controls col-xs-offset-4 col-md-offset-4 col-xs-4 col-md-4">
+  <%= link_to 'Edit', edit_airplane_path(@airplane) %> |
+  <%= link_to 'Back', airplanes_path %>
+</div>
