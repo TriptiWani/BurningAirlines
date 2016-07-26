@@ -3,6 +3,10 @@ var app = app || {};
 app.AppView = Backbone.View.extend({
     el: '#main', //This div has not yet been created
 
+    initialize: function () {
+    console.log( "A new view has been initialized" );
+    },
+
     render: function() {
         var content = $('#appView').html();
 
