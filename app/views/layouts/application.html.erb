@@ -7,7 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <nav>
+    <ul class="nav nav-tabs options">
+      <li role="presentation" class="<%= 'active' if params[:controller] == 'controller3' %>">
+          <%= link_to 'Create account <span class="glyphicon glyphicon-user" aria-hidden="true"></span>'.html_safe , new_user_path %>
+      </li>
+      <li role="presentation" class="<%= 'active' if params[:controller] == 'controller4' %>">
+        <%= link_to 'Log In <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>'.html_safe,new_user_path %>
+      </li>
+      <li role="presentation" class="<%= 'active' if params[:controller] == 'controller2' %>">
+          <%= link_to 'Contact Us <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>'.html_safe ,new_user_path %>
+      </li>
+    </ul>
+  </nav>
 <%= yield %>
 
 </body>
