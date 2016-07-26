@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :airplanes
   resources :users
 
+  get '/contact' => 'pages#contact' , :as => 'contact_us'
 end
