@@ -10,7 +10,8 @@ app.AppRouter = Backbone.Router.extend({
     appView.render();
   },
   showDetails: function(id){
-    var flight = app.Flight.get(id);//this line is giving error
+    console.log(id);
+    var flight = app.flights.get(id);//this line is giving error
     var flightView = new app.FlightView({model:flight});
     flightView.render();
   },
