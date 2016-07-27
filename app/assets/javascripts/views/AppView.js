@@ -13,6 +13,7 @@ app.AppView = Backbone.View.extend({
       var destination = $('#destination').val();
       console.log('Origin: '+origin);
       console.log('Dest: '+destination);
+      console.log(this.collection);
     },
     render: function() {
         var content = $('#appView').html();
