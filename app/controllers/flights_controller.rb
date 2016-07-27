@@ -1,5 +1,7 @@
 class FlightsController < ApplicationController
   before_action :set_flight, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize, only:[:new, :create, :edit, :update, :destroy]
+  before_filter :authorize_user
   # before_action :authorize
 
   # GET /flights
@@ -79,6 +81,12 @@ class FlightsController < ApplicationController
     end
 
     def authorize
-    redirect_to root_path unless @current_user.admin?  #desfine session control
-  end
+      flash[:notice] = 'Admin access only. Please login in as an Admin' unless @current_user.isAdmin?
+      redirect_to root_path unless @current_user.isAdmin?
+    end
+
+    def authorize_user
+      flash[:notice] = 'Please login' unless @current_user.present?
+      redirect_to root_path unless @current_user.present?
+    end
 end
