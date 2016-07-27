@@ -5,7 +5,7 @@ class FlightsController < ApplicationController
   # GET /flights
   # GET /flights.json
   def index
-     @flights = Flight.where(from:params[:from], to:params[:to]) if (params[:from].present? && params[:to].present?)
+     @flights = Flight.where(from:params[:from], to:params[:to])
   end
 
   # GET /flights/1
