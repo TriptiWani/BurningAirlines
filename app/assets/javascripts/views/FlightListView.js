@@ -3,7 +3,7 @@ var app = app|| {};
 app.FlightListView = Backbone.View.extend({
   tagName: 'li',
   events: {
-    'click': 'searchFlights'
+    'click button': 'searchFlights'
   },
   render: function() {
     this.$el.text(this.model.get('number'));
@@ -11,8 +11,6 @@ app.FlightListView = Backbone.View.extend({
   },
   searchFlights: function() {
     // write the search function here
-    console.log('You clicked a flight',this.model.get('id'));
-    console.log('You clicked a flight',this.model.get('id'));
     app.router.navigate('flights/'+ this.model.get('id'),true);
   }
 });

@@ -2,19 +2,16 @@ var app = app || {};
 
 app.AppRouter = Backbone.Router.extend({
   routes: {
-    '': 'search',
-    'flight/:id': 'flightDetails',
+    '': 'index',
+    'flights/:id': 'showDetails',
   },
-  search: function () {
-    // debugger;
-    console.log("something");
-    var searchView = new app.SearchView({collection: app.flights});
-    searchView.render();
+  index: function () {
+    var appView = new app.AppView({collection:app.flights});
+    appView.render();
   },
-  flightDetails: function(id) {
-    // debugger;
-    console.log("something else");
-    var flightView = new app.FlightView();
+  showDetails: function(id) {
+    var flight = app.flights.get(id);
+    var flightView = new app.FlightView({model:flight});
     flightView.render();
   }
 });
