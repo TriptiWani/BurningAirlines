@@ -5,7 +5,7 @@ app.FlightListView = Backbone.View.extend({
   events: {
     'click button': 'searchFlights'
   },
-  render: function() {
+  render: function(results) {
     this.$el.text(this.model.get('number'));
     this.$el.appendTo('#flights');
   },
