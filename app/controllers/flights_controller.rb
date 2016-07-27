@@ -81,12 +81,12 @@ class FlightsController < ApplicationController
     end
 
     def authorize
-      flash[:notice] = 'Admin access only. Please login in as an Admin' unless @current_user.isAdmin?
+      flash[:alert] = 'Admin access only. Please login in as an Admin' unless @current_user.isAdmin?
       redirect_to root_path unless @current_user.isAdmin?
     end
 
     def authorize_user
-      flash[:notice] = 'Please login' unless @current_user.present?
+      flash[:alert] = 'Please login' unless @current_user.present?
       redirect_to root_path unless @current_user.present?
     end
 end
