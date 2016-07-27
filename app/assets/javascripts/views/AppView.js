@@ -13,10 +13,11 @@ app.AppView = Backbone.View.extend({
       var destination = $('#destination').val();
       console.log('Origin: '+origin);
       console.log('Dest: '+destination);
+      console.log(this.collection);
     },
     render: function() {
         var content = $('#appView').html();
-
+        console.log(this.collection);
         this.$el.html(content);
         this.collection.each(function(flight) {
             var flightListView = new app.FlightListView({ model: flight });
