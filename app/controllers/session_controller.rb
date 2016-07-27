@@ -1,5 +1,6 @@
 class SessionController < ApplicationController
   def new
+    redirect_to search_flights_path
   end
 
   def create
