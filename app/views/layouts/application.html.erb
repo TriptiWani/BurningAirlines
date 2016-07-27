@@ -7,6 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header class="container-fluid">
+    <h1 class="header-heading">Burning Airlines</h1>
+    <h4><span class="header-text-highlight">A Production by Team Tripti</span></h4>
+  </header>
+
   <nav>
     <ul class="nav nav-tabs options">
       <% if !(@current_user.present?) %>
@@ -29,7 +34,20 @@
       </li>
     </ul>
   </nav>
-<%= yield %>
+<div class="container yeild-wrapper">
+  <%= yield %>
+</div>
+
+
+<footer class="container-fluid">
+  <div class="social-icons">
+
+  </div>
+
+  <div class="copyright-notice">
+    <p>&copy;2016 Team Tripti. All rights reserved</p>
+  </div>
+</footer>
 
 </body>
 </html>
