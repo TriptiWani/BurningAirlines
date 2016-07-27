@@ -11,17 +11,34 @@ app.AppView = Backbone.View.extend({
     searchFlights: function(){
       var origin = $('#origin').val();
       var destination = $('#destination').val();
-      console.log('Origin: '+origin);
-      console.log('Dest: '+destination);
-      console.log(this.collection);
+      results = this.collection.where({origin: origin, destination: destination});
+      results.forEach(function(flight) {
+          var flightListView = new app.FlightListView({ model: flight });
+          flightListView.render();
+      });
+
     },
     render: function() {
         var content = $('#appView').html();
-        console.log(this.collection);
         this.$el.html(content);
-        this.collection.each(function(flight) {
-            var flightListView = new app.FlightListView({ model: flight });
-            flightListView.render();
+        var origins = [];
+        var destinations =[];
+        this.collection.models.forEach(function(f){
+          destinations.push(f.attributes.destination);
+          origins.push(f.attributes.origin);
+        });
+
+        var $selectOrigin = this.$el.find('#origin');
+        _.uniq(origins).forEach(function(origin){
+          var $option = $('<option></option>');
+          $option.text(origin);
+          $option.appendTo($selectOrigin);
+        });
+        var $selectDestination = this.$el.find('#destination');
+        _.uniq(destinations).forEach(function(destination){
+          var $option = $('<option></option>');
+          $option.text(destination);
+          $option.appendTo($selectDestination);
         });
     }
 });
