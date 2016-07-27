@@ -13,3 +13,63 @@
  *= require_tree .
  *= require_self
  */
+/*----------------------------------------------------------------------------*/
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 80vh;
+  min-height: 100vh;
+  position: relative;
+}
+
+.yeild-wrapper {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/*----------------------------------------------------------------------------*/
+/* ### HEADER ### */
+
+header {
+  position: relative;
+  height: 25vh;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #2AB2C2;
+  background-image: url(http://jquerycards.com/wp-content/themes/Template/dist/images/bg.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+
+.header-heading {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: Righteous;
+  text-shadow: 2px 2px rgba(0,0,0,.4);
+  display: block;
+  z-index: 3;
+}
+
+.header-text-highlight {
+  background-color: rgba(0,0,0,.4);
+  display: inline;
+  padding: 3px 20px 3px 20px;
+  z-index: 4;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/* ### FOOTER ### */
+
+footer {
+  min-height: 5vh;
+  position: absolute;
+  background-color: #1F1F1F;
+  color: #FFFFFF;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+}
