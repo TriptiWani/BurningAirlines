@@ -14,15 +14,21 @@
     </select>
     <button>Search</button>
   </div>
-  <ul id="flightsTable">
+  <!-- <ul id="flightsTable"> -->
     <p>Flight Search Results</p>
-    <table id="flights">
-      <td>Date</td>
-      <td>Flight</td>
-      <td>From > To </td>
-      <td>Plane</td>
+    <table>
+      <tbody id="flights">
+        <tr>
+          <td>Date</td>
+          <td>Flight</td>
+          <td>From > To </td>
+          <td>Plane</td>
+        </tr>
+      </tbody>
+
+
     </table>
-  </ul>
+  <!-- </ul> -->
 </script>
 
 <script id="resultsView" type="text/template">
@@ -33,10 +39,10 @@
 
 <script id="flightView" type="text/template">
   <h1>{{= number }} Details</h1>
-  <h2>Origin: {{= origin }} </h2>
-  <h2>Destination: {{= destination }} </h2>
-  <h3>Date: {{= date}}</h3>
+  <h2>Origin: {{ origin }} </h2>
+  <h2>Destination: {{ destination }} </h2>
+  <h3>Date: {{ date}}</h3>
   <p>Plane Layout:</p>
-  <!-- <p>Rows: {{#= airplane.rows }}</p>
-  <p>Columns: {{#= airplane.columns }}</p> -->
 </script>
+<!-- <p>Rows: {{# airplane.rows }}</p>
+<p>Columns: {{# airplane.columns }}</p> -->
