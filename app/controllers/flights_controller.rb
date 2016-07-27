@@ -5,11 +5,9 @@ class FlightsController < ApplicationController
   # GET /flights
   # GET /flights.json
   def index
-    if (params[:from].present? && params[:to].present?)
-     @flights = Flight.where(from:params[:from], to:params[:to])
-   else
-     redirect_to root_path
-   end
+
+     @flights = Flight.where(from:params[:from], to:params[:to]) if (params[:from].present?&&params[:to].present?)
+
   end
 
   # GET /flights/1

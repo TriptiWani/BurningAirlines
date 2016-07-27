@@ -1,13 +1,12 @@
 class SessionController < ApplicationController
   def new
-    redirect_to search_flights_path
   end
 
   def create
     user = User.find_by :email => params[:email]
     if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to search_flights_path
     else
       redirect_to login_path
     end

@@ -17,4 +17,4 @@ app.AppRouter = Backbone.Router.extend({
     var flightView = new app.FlightView();
     flightView.render();
   }
-})
+});
