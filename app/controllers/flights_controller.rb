@@ -8,7 +8,7 @@ class FlightsController < ApplicationController
     if (params[:from].present?&&params[:to].present?)
      @flights = Flight.where(from:params[:from], to:params[:to])
    else
-     @flights = Flight.all
+     @flights = Flight.all.order('date ASC')
    end
   end
 
@@ -33,13 +33,14 @@ class FlightsController < ApplicationController
 
     respond_to do |format|
       if @flight.save
-        format.html { redirect_to @flight, notice: 'Flight was successfully created.' }
+        format.html { redirect_to flights_path, notice: 'Flight was successfully created.' }
         format.json { render :show, status: :created, location: @flight }
       else
         format.html { render :new }
         format.json { render json: @flight.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /flights/1
@@ -74,7 +75,7 @@ class FlightsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def flight_params
-      params.require(:flight).permit(:number, :origin, :destination, :date, :plane)
+      params.require(:flight).permit(:number, :origin, :destination, :date, :plane,:airplane_id)
     end
 
     def authorize

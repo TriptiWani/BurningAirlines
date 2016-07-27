@@ -16,7 +16,7 @@ app.AppView = Backbone.View.extend({
     },
     render: function() {
         var content = $('#appView').html();
-
+        console.log(this.collection);
         this.$el.html(content);
         this.collection.each(function(flight) {
             var flightListView = new app.FlightListView({ model: flight });

@@ -28,8 +28,7 @@
     <%= f.text_field :date %>
   </div>
   <div class="field">
-    <%= f.label :plane %><br>
-    <%= f.text_area :plane %>
+      <%= f.select :airplane_id, Airplane.pluck(:name, :id), :include_blank => true %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,25 +1,3 @@
-<!-- <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Number:</strong>
-  <%= @flight.number %>
-</p>
-
-<p>
-  <strong>Origin:</strong>
-  <%= @flight.origin %>
-</p>
-
-<p>
-  <strong>Destination:</strong>
-  <%= @flight.destination %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @flight.date %>
-</p> -->
-
 <h3>Flights</h3>
 </br>
 
@@ -41,11 +19,7 @@
     <td>   <%= @flight.date %></td>
 
     <td>
-    <%= form_for @flight do |f| %>
-      <fieldset>
-        <%= f.select :airplane_id, Airplane.pluck(:name, :id), :include_blank => true %>
-      </fieldset>
-    <% end %>
+      <%= @flight.airplane.name %>
   </td>
     </tr>
 
