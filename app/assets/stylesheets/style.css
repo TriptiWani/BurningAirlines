@@ -10,3 +10,9 @@ div#plane div.seat {
     margin-left: 1.5em;
     margin-top: 1.5em;
 }
+td.planeSeats {
+  border: 1px solid black;
+  /*border-color: black;*/
+  border-width: thin;
+  width: 5em;
+}

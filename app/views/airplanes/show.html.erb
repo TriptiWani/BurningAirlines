@@ -15,15 +15,37 @@
   <%= @airplane.columns %>
 </p>
 
-<div id="plane" class="col-xs-offset-4 col-md-offset-4 col-xs-4 col-md-4">
-  <div class="row">
-  <% @airplane.columns.times do |c| %>
-      <% @airplane.rows.times do |r| %>
-        <div class="seat"></div>
-      <% end %>
+<!-- <div id="plane" class="col-xs-offset-4 col-md-offset-4 col-xs-4 col-md-4">
 
-  <% end %>
-    </div>
+  <%# @airplane.columns.times do |c| %>
+  <div class="row">
+      <%# @airplane.rows.times do |r| %>
+        <div class="seat"></div>
+      <%# end %>
+  </div>
+  <%# end %> -->
+
+  <table class="seats">
+    <tr>
+      <td></td>
+      <% (@airplane.rows).times do |row| %>
+      <td> <%= row+1 %></td>
+      <% end %>
+    </tr>
+    <% (@airplane.columns).times do |col| %>
+    <tr>
+      <td>
+        <%= (('A'..'Z').to_a)[col] %>
+      </td>
+      <% (@airplane.rows).times do |row| %>
+      <td class="planeSeats" id="<%= (('A'..'Z').to_a)[col]+(row+1).to_s %>">
+        avail
+      </td>
+      <% end %>
+    </tr>
+    <% end %>
+  </table>
+
 </div>
 
 <div class="controls col-xs-offset-4 col-md-offset-4 col-xs-4 col-md-4">

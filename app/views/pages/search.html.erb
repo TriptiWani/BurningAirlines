@@ -18,12 +18,14 @@
     <p>Flight Search Results</p>
     <table>
       <tbody id="flights">
-        <tr>
-          <td>Date</td>
-          <td>Flight</td>
-          <td>From > To </td>
-          <td>Plane</td>
-        </tr>
+        <thead>
+          <th>
+            <td>Date</td>
+            <td>Flight</td>
+            <td>From > To </td>
+            <td>Plane</td>
+          </th>
+        </thead>
       </tbody>
 
 
@@ -38,11 +40,48 @@
 </script>
 
 <script id="flightView" type="text/template">
-  <h1>{{= number }} Details</h1>
-  <h2>Origin: {{ origin }} </h2>
-  <h2>Destination: {{ destination }} </h2>
-  <h3>Date: {{ date}}</h3>
-  <p>Plane Layout:</p>
+  <table>
+  <thead>
+    <th>
+      <td>Date</td>
+      <td>Flight Number</td>
+      <td>Route</td>
+    </th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{= date}}</td>
+      <td>Flight {{= number}}</td>
+      <td>{{=origin}} > {{=destination}}</td>
+    </tr>
+  </tbody>
+  </table>
+
+  <div id="planeLayout">
+    <p>Plane Layout:</p>
+    <table class="seats">
+      <tr>
+        <td></td>
+        {{ (@airplane.rows).times do |row| }}
+        <td> {{= row+1 }}</td>
+        {{ end }}
+      </tr>
+      {{ (@airplane.columns).times do |col| }}
+      <tr>
+        <td>
+          {{= (('A'..'Z').to_a)[col] }}
+        </td>
+        {{ (@airplane.rows).times do |row| }}
+        <td class="planeSeats" id="{{= (('A'..'Z').to_a)[col]+(row+1).to_s }}">
+          avail
+        </td>
+        {{ end }}
+      </tr>
+      {{ end }}
+    </table>
+  </div>
+  <div id="selectSeat">
+    <div id="seatSelected"></div>
+    <button id="confirmSeat">Select Seat</button>
+  </div>
 </script>
-<!-- <p>Rows: {{# airplane.rows }}</p>
-<p>Columns: {{# airplane.columns }}</p> -->
