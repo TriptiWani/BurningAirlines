@@ -18,7 +18,7 @@
         </li>
       <% else %>
         <li role="presentation" class="<%= 'active' if params[:controller] == 'controller3' %>">
-          <%= link_to 'Logout <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>'.html_safe,login_path,:method => 'delete' %>
+          <%= link_to 'Logout <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>'.html_safe,root_path,:method => 'delete' %>
         </li>
         <li role="presentation" class="<%= 'active' if params[:controller] == 'controller4' %>">
           <%= link_to @current_user.name,user_path(@current_user.id) %>
