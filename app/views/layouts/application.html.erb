@@ -1,54 +1,58 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>BurningAirlines</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <header class="container-fluid">
-    <h1 class="header-heading">Burning Airlines</h1>
-    <h4><span class="header-text-highlight">A Production by Team Tripti</span></h4>
-  </header>
+    <head>
+        <title>BurningAirlines</title>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <header class="container-fluid">
+            <h1 class="header-heading">Burning Airlines</h1>
+            <h4>
+                <span class="header-text-highlight">A Production by Team Tripti</span>
+            </h4>
+        </header>
 
-  <nav>
-    <ul class="nav nav-tabs options">
-      <li><%= link_to 'Home <span class="glyphicon glyphicon-home" aria-hidden="true"></span>'.html_safe, search_flights_path %></li>
-      <% if !(@current_user.present?) %>
-        <li role="presentation" class="<%= 'active' if params[:controller] == 'controller1' %>">
-            <%= link_to 'Create account <span class="glyphicon glyphicon-user" aria-hidden="true"></span>'.html_safe , new_user_path %>
-        </li>
-        <li role="presentation" class="<%= 'active' if params[:controller] == 'controller2' %>">
-          <%= link_to 'Log In <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>'.html_safe,login_path %>
-        </li>
-      <% else %>
-        <li role="presentation" class="<%= 'active' if params[:controller] == 'controller3' %>">
-          <%= link_to 'Logout <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>'.html_safe,login_path,:method => 'delete' %>
-        </li>
-        <li role="presentation" class="<%= 'active' if params[:controller] == 'controller4' %>">
-          <%= link_to @current_user.name,user_path(@current_user.id) %>
-        </li>
-      <% end %>
-      <li role="presentation" class="<%= 'active' if params[:controller] == 'controller5' %>">
-          <%= link_to 'Contact Us <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>'.html_safe ,contact_us_path %>
-      </li>
-    </ul>
-  </nav>
-<div class="container yeild-wrapper">
-  <%= yield %>
-</div>
+        <nav>
+            <ul class="nav nav-tabs options">
+                <li><%= link_to 'Home <span class="glyphicon glyphicon-home" aria-hidden="true"></span>'.html_safe, search_flights_path %></li>
+                <% if !(@current_user.present?) %>
+                <li role="presentation" class="<%= 'active' if params[:controller] == 'controller1' %>">
+                    <%= link_to 'Create account <span class="glyphicon glyphicon-user" aria-hidden="true"></span>'.html_safe , new_user_path %>
+                </li>
+                <li role="presentation" class="<%= 'active' if params[:controller] == 'controller2' %>">
+                    <%= link_to 'Log In <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>'.html_safe,login_path %>
+                </li>
+            <% else %>
+                <li role="presentation" class="<%= 'active' if params[:controller] == 'controller3' %>">
+                    <%= link_to 'Logout <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>'.html_safe,login_path,:method => 'delete' %>
+                </li>
+                <li role="presentation" class="<%= 'active' if params[:controller] == 'controller4' %>">
+                    <%= link_to @current_user.name,user_path(@current_user.id) %>
+                </li>
+                <% end %>
+                <li role="presentation" class="<%= 'active' if params[:controller] == 'controller5' %>">
+                    <%= link_to 'Contact Us <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>'.html_safe ,contact_us_path %>
+                </li>
+            </ul>
+        </nav>
 
+        <div class="container yeild-wrapper">
+        <% if flash[:notice] %>
+          <div class="alert alert-danger" role="alert"><%= flash[:notice] %></div>
+        <% end %>
+        
+            <%= yield %>
+        </div>
 
-<footer class="container-fluid">
-  <div class="social-icons">
+        <footer class="container-fluid">
+            <div class="social-icons"></div>
 
-  </div>
+            <div class="copyright-notice">
+                <p>&copy;2016 Team Tripti. All rights reserved</p>
+            </div>
+        </footer>
 
-  <div class="copyright-notice">
-    <p>&copy;2016 Team Tripti. All rights reserved</p>
-  </div>
-</footer>
-
-</body>
+    </body>
 </html>
