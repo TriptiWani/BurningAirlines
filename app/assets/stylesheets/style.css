@@ -11,7 +11,7 @@ div#plane {
     margin-top: 1.5em;
 <<<<<<< HEAD
 }*/
-=======
+
 }
 td.planeSeats {
   border: 1px solid black;
@@ -19,4 +19,6 @@ td.planeSeats {
   border-width: thin;
   width: 5em;
 }
->>>>>>> bca27085f47618fc1296e0a07f51411c9c830c18
+.booked {
+  background-color: grey;
+}

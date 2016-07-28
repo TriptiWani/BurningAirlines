@@ -4,6 +4,7 @@ app.AppRouter = Backbone.Router.extend({
   routes: {
     '': 'index',
   //  'flights/:id': 'showFlightDetails',
+  'reservations/flights/:id1/users/:id2':'makeReservation',
    'flights/:id1/airplanes/:id2': 'showAirplaneAndFlightDetails'
   },
   index: function(){
@@ -19,6 +20,10 @@ app.AppRouter = Backbone.Router.extend({
     var flight = app.flights.get(id1);
     var flightView = new app.FlightView({model:flight});
     flightView.render();
+
+  },
+  makeReservation: function(id1,id2){
+    console.log('Confirm seats');
 
   }
 });

@@ -4,7 +4,7 @@ app.FlightView = Backbone.View.extend({
   el: '#main',
   events: {
     'click td.planeSeats': 'seatSelection',
-    'click button#confirmSeat': 'makeReservation'
+    'click button#confirmSeat': 'confirmSeats'
   },
   render: function(){
     var flightViewTemplate = $('#flightView').html();
@@ -26,11 +26,22 @@ app.FlightView = Backbone.View.extend({
     });
 
   },
-  seatSelection: function(){
-    var seatId = $('td').attr(id);
+  seatSelection: function(event){
+    var $td = $(event.target);
+    var seatId = $td.attr('id');
     console.log(seatId);
+    $('p#seatSelected').text(seatId);
+    $td.addClass('booked');
   },
-  makeReservation: function(){
-
+  confirmSeats: function(){
+    console.log('Confirm seats');
+    // reservations/flights/:id1/users/:id2
+      var userId = app.current_user;
+      var flightId = this.model.get('id');
+      var reservation = new app.Reservation({ user_id: userId , flight_id: flightId});
+      reservation.save();
+      app.reservations.add(reservation);
+      // console.log('reservations/flights/'+ this.model.get('id')+'/users/'+ userId);
+      // app.router.navigate('reservations/flights/'+ this.model.get('id')+'/users/'+ userId, true);
   }
 });

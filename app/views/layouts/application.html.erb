@@ -8,6 +8,12 @@
         <%= csrf_meta_tags %>
     </head>
     <body>
+    <% if @current_user.present? %>
+      <script>
+var app = app || {};
+app.current_user = <%= @current_user.id %>;
+      </script>
+    <% end %>
         <header class="container-fluid">
             <h1 class="header-heading">Burning Airlines</h1>
             <h4>
