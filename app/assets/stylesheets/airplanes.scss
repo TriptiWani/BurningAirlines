@@ -1,23 +1,46 @@
 // Place all the styles related to the Airplanes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-div.cell {
-    width: 20px;
+
+
+// div.cell {
+//     width: 20px;
+//     height: 20px;
+//     border: 1px solid red;
+//     float: left;
+//     margin-left: 1.5em;
+//     margin-top: 1.5em;
+// }
+//
+// div.longrow {
+//     margin-left: 1.5em;
+//     margin-top: 1.5em;
+//     clear: both;
+// }
+
+
+
+table.airplaneindex {
+  width: 140%;
+}
+
+th.airplaneindex {
+    text-align: center;
+    background-color: #F2F2F2;
+}
+
+
+td.airplaneindex  {
     height: 20px;
-    border: 1px solid red;
-    float: left;
-    margin-left: 1.5em;
-    margin-top: 1.5em;
+    vertical-align: bottom;
+    /*border-bottom: 1px solid #ddd;*/
 }
 
-div.longrow {
-    margin-left: 1.5em;
-    margin-top: 1.5em;
-    clear: both;
+
+tr:nth-child(even).airplaneindex {
+  background-color: #f2f2f2;
 }
 
-div.container{
-    display: block;
-    margin:0 auto;
-
+h1.airplaneindex {
+  font-family:sans-serif;
 }
