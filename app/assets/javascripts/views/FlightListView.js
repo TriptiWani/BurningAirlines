@@ -31,11 +31,7 @@ app.FlightListView = Backbone.View.extend({
     $flightNumber.appendTo(this.$el);
     $flightOriginDestination.appendTo(this.$el);
     $flightPlane.appendTo(this.$el);
-    // debugger;
     this.$el.appendTo('#flights');
-
-
-    // this.$el.html($flightRow);
   },
   showFlightDetails: function() {
     app.router.navigate('flights/'+ this.model.get('id')+'/airplanes/'+ this.model.get('airplane_id'), true);
