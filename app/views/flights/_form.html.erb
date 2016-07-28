@@ -27,10 +27,15 @@
     <%= f.label :date %><br>
     <%= f.text_field :date %>
   </div>
+
+</br>
   <div class="field">
-      <%= f.select :airplane_id, Airplane.pluck(:name, :id), :include_blank => true %>
+    <%= f.label :plane %><br>
+      <%= f.select :airplane_id, Airplane.pluck(:name, :id), :include_blank => true, :class => 'flightselectbox'%>
   </div>
+
+</br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'flightbuttons'%>
   </div>
 <% end %>

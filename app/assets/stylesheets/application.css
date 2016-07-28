@@ -28,6 +28,11 @@ body {
   text-align: center;
 }
 
+nav li {
+  left: 30%;
+  right: 30%;
+}
+
 /*----------------------------------------------------------------------------*/
 /* ### HEADER ### */
 
@@ -72,17 +77,4 @@ footer {
   text-align: center;
   bottom: 0;
   width: 100%;
-}
-
-
-label {
-   width: 200px;
-   display: inline-block;
-   text-align: left;
-}
-
-.field {
-   width: 200px;
-   display: inline-block;
-   text-align: left;
 }

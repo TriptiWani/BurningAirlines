@@ -15,10 +15,7 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :isAdmin %><br>
-    <%= f.check_box :isAdmin %>
-  </div>
+
   <div class="field">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
@@ -32,6 +29,6 @@
     <%= f.text_field :password_confirmation %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'userbuttons'%>
   </div>
 <% end %>

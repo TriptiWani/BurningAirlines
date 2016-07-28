@@ -20,17 +20,18 @@
 
 
 
-table {
-  width: 140%;
+table.flightindex, table.airplaneindex{
+  width: 160%;
+  border: 1px solid black;
 }
 
-th{
+th.flightindex, th.airplaneindex{
     text-align: center;
     background-color: #F2F2F2;
 }
 
 
-td{
+td.flightindex, td.airplaneindex{
     height: 20px;
     vertical-align: bottom;
     /*border-bottom: 1px solid #ddd;*/

@@ -1,3 +1,19 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.userbuttons{
+      background-color: #2AB2C2;
+      border: none;
+      border-radius: 2em;
+      color: white;
+      padding: 8px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 13px;
+      margin: 4px 2px;
+      cursor: pointer;
+}
