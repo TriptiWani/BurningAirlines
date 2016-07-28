@@ -8,10 +8,18 @@ app.FlightView = Backbone.View.extend({
   },
   render: function(){
     var flightViewTemplate = $('#flightView').html();
-    console.log(flightViewTemplate);
     var flightViewTemplater = _.template(flightViewTemplate);
 
+    // var flight = this.model.toJSON();
+    // flight.columns = 55;
     this.$el.html( flightViewTemplater( this.model.toJSON() ) );
+    //
+    // app.airplanes = new app.Airplanes();
+    // var airplaneId = this.model.get('airplane_id');
+    // app.airplanes.fetch().done(function(){
+    //   $flightPlane.text((((app.airplanes.where({ id: airplaneId }))[0]).attributes).name);
+    // });
+
   },
   seatSelection: function(){
     var seatId = $('td').attr(id);

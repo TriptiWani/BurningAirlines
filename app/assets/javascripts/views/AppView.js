@@ -1,18 +1,25 @@
 var app = app || {};
 
 app.AppView = Backbone.View.extend({
-    el: '#main', //This div has not yet been created
+    el: '#main',
     events: {
-      'click button': 'searchFlights'
+      'click button': 'searchFlights',
     },
     initialize: function () {
     console.log( "A new view has been initialized" );
     },
     searchFlights: function(){
+
+
+
       var origin = $('#origin').val();
       var destination = $('#destination').val();
+      var content = $('#resultsView').html();
+      // debugger;
+      this.$el.html(content);
       results = this.collection.where({origin: origin, destination: destination});
       results.forEach(function(flight) {
+        console.log('flight from colllection in appView:render()', flight);
           var flightListView = new app.FlightListView({ model: flight });
           flightListView.render();
       });

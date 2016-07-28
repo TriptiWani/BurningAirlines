@@ -1,11 +1,13 @@
 <div id="main">
+  <div id="flightsList">
+
+  </div>
+  <div id="planeSeatsDisplay"></div>
 </div>
 
 <script id="appView" type="text/template">
   <h1> Search Flights </h1>
   <div id="search">
-    <!-- <input type="text" name="origin" id="origin" placeholder="Source">
-    <input type="text" name="destination" id="destination" placeholder="Destination"> -->
     <select name="origin" id="origin">
 
     </select>
@@ -14,29 +16,24 @@
     </select>
     <button>Search</button>
   </div>
-  <!-- <ul id="flightsTable"> -->
-    <p>Flight Search Results</p>
-    <table>
-      <tbody id="flights">
-        <thead>
-          <th>
-            <td>Date</td>
-            <td>Flight</td>
-            <td>From > To </td>
-            <td>Plane</td>
-          </th>
-        </thead>
-      </tbody>
-
-
-    </table>
-  <!-- </ul> -->
 </script>
 
 <script id="resultsView" type="text/template">
-  <ul id="flights">
-
-  </ul>
+  <div>
+    <p>Flight Search Results</p>
+    <table>
+      <thead>
+        <th>
+          <td>Date</td>
+          <td>Flight</td>
+          <td>From > To </td>
+          <td>Plane</td>
+        </th>
+      </thead>
+      <tbody id="flights">
+      </tbody>
+    </table>
+  </div>
 </script>
 
 <script id="flightView" type="text/template">
@@ -53,31 +50,27 @@
       <td>{{= date}}</td>
       <td>Flight {{= number}}</td>
       <td>{{=origin}} > {{=destination}}</td>
+      <td>{{= columns}}</td>
     </tr>
   </tbody>
   </table>
+</script>
 
+<script id="planeView" type="text/template">
   <div id="planeLayout">
     <p>Plane Layout:</p>
+    <p>{{= columns}}</p>
     <table class="seats">
       <tr>
         <td></td>
-        {{ (@airplane.rows).times do |row| }}
-        <td> {{= row+1 }}</td>
-        {{ end }}
+        <td> </td>
       </tr>
-      {{ (@airplane.columns).times do |col| }}
       <tr>
         <td>
-          {{= (('A'..'Z').to_a)[col] }}
         </td>
-        {{ (@airplane.rows).times do |row| }}
-        <td class="planeSeats" id="{{= (('A'..'Z').to_a)[col]+(row+1).to_s }}">
-          avail
+        <td>
         </td>
-        {{ end }}
       </tr>
-      {{ end }}
     </table>
   </div>
   <div id="selectSeat">
