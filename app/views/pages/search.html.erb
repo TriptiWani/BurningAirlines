@@ -59,13 +59,16 @@
       <tr>
         {{ _(rows).times(function(i){ }}
           <td class="planeSeats" id="{{=alphabets[n] + (i+1)}}">
-            {{=alphabets[n] + (i+1)}}
-            avail
+            {{=alphabets[n] + (i+1)}} avail
           </td>
         {{ }) }}
       </tr>
     {{ }) }}
   </table>
+  <div id="selectSeat">
+    <p id="seatSelected"></p>
+    <button id="confirmSeat">Select Seat</button>
+  </div>
 </script>
 
 <script id="planeView" type="text/template">
@@ -85,8 +88,5 @@
       </tr>
     </table>
   </div>
-  <div id="selectSeat">
-    <div id="seatSelected"></div>
-    <button id="confirmSeat">Select Seat</button>
-  </div>
+
 </script>
