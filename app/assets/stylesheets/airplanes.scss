@@ -20,27 +20,55 @@
 
 
 
-table.airplaneindex {
+table {
   width: 140%;
 }
 
-th.airplaneindex {
+th{
     text-align: center;
     background-color: #F2F2F2;
 }
 
 
-td.airplaneindex  {
+td{
     height: 20px;
     vertical-align: bottom;
     /*border-bottom: 1px solid #ddd;*/
 }
 
 
-tr:nth-child(even).airplaneindex {
+tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-h1.airplaneindex {
+h1 {
   font-family:sans-serif;
+}
+
+
+// _from.html.erb
+label {
+   width: 200px;
+   display: inline-block;
+   text-align: left;
+}
+
+.field {
+   width: 500px;
+   display: inline-block;
+   text-align: left;
+}
+
+.airplanebuttons{
+      background-color: #2AB2C2;
+      border: none;
+      border-radius: 2em;
+      color: white;
+      padding: 8px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 13px;
+      margin: 4px 2px;
+      cursor: pointer;
 }
