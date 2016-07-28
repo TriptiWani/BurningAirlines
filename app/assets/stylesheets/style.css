@@ -10,23 +10,3 @@ div#plane {
     margin-left: 1.5em;
     margin-top: 1.5em;
 }*/
-
-
-div.cell {
-    width: 20px;
-    height: 20px;
-    border: 1px solid red;
-    float: left;
-    margin-left: 1.5em;
-    margin-top: 1.5em;
-}
-
-
-div.row {
-
-    border: 1px solid green;
-    float: left;
-    margin-left: 1.5em;
-    margin-top: 1.5em;
-    clear: both;
-}
