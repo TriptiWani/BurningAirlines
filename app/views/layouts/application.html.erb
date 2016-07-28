@@ -38,12 +38,18 @@
             </ul>
         </nav>
 
-        <div class="container yeild-wrapper">
-        <% if flash[:notice] %>
-          <div class="alert alert-danger" role="alert"><%= flash[:notice] %></div>
-        <% end %>
-        
+        <div class="container yeild-wrapper row">
+          <div class="col-md-4"></div>
+
+          <div class="col-md-4">
+            <% if flash[:alert] %>
+              <div class="alert alert-danger" role="alert"><%= flash[:alert] %></div>
+            <% end %>
+
             <%= yield %>
+          </div>
+
+          <div class="col-md-4"></div>
         </div>
 
         <footer class="container-fluid">
