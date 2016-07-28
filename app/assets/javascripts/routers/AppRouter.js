@@ -11,13 +11,11 @@ app.AppRouter = Backbone.Router.extend({
     appView.render();
   },
   showFlightDetails: function(id){
-    console.log('flight');
     var flight = app.flights.get(id);
     var flightView = new app.FlightView({model:flight});
     flightView.render();
   },
   showAirplaneAndFlightDetails: function(id1,id2){
-    console.log('plane&flight');
     var flight = app.flights.get(id1);
     var flightView = new app.FlightView({model:flight});
     flightView.render();

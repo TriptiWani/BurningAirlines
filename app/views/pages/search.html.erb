@@ -50,9 +50,21 @@
       <td>{{= date}}</td>
       <td>Flight {{= number}}</td>
       <td>{{=origin}} > {{=destination}}</td>
-      <td>{{= columns}}</td>
     </tr>
   </tbody>
+  </table>
+  <table class="seats">
+    {{ var alphabets = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split(''); }}
+    {{ _(columns).times(function(n){ }}
+      <tr>
+        {{ _(rows).times(function(i){ }}
+          <td class="planeSeats" id="{{=alphabets[n] + (i+1)}}">
+            {{=alphabets[n] + (i+1)}}
+            avail
+          </td>
+        {{ }) }}
+      </tr>
+    {{ }) }}
   </table>
 </script>
 
