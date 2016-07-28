@@ -8,6 +8,7 @@
 
 
 
+
 <!-- <div class="container">
 <% @airplane.rows.times do |r| %>
 
@@ -22,6 +23,34 @@
 
 </div> -->
 
+
+
+<p>
+  <strong>Columns:</strong>
+  <%= @airplane.columns %>
+</p>
+  <table class="seats">
+    <tr>
+      <td></td>
+      <% (@airplane.rows).times do |row| %>
+      <td> <%= row+1 %></td>
+      <% end %>
+    </tr>
+    <% (@airplane.columns).times do |col| %>
+    <tr>
+      <td>
+        <%= (('A'..'Z').to_a)[col] %>
+      </td>
+      <% (@airplane.rows).times do |row| %>
+      <td class="planeSeats" id="<%= (('A'..'Z').to_a)[col]+(row+1).to_s %>">
+        avail
+      </td>
+      <% end %>
+    </tr>
+    <% end %>
+  </table>
+
+</div>
 
 
 <div class="controls col-xs-offset-4 col-md-offset-4 col-xs-4 col-md-4">

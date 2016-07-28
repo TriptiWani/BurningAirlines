@@ -1,11 +1,13 @@
 <div id="main">
+  <div id="flightsList">
+
+  </div>
+  <div id="planeSeatsDisplay"></div>
 </div>
 
 <script id="appView" type="text/template">
   <h1> Search Flights </h1>
   <div id="search">
-    <!-- <input type="text" name="origin" id="origin" placeholder="Source">
-    <input type="text" name="destination" id="destination" placeholder="Destination"> -->
     <select name="origin" id="origin">
 
     </select>
@@ -14,36 +16,65 @@
     </select>
     <button>Search</button>
   </div>
-  <!-- <ul id="flightsTable"> -->
+</script>
 
+<script id="resultsView" type="text/template">
+  <div>
+    <p>Flight Search Results</p>
     <table id="flights-table">
-      <tbody id="flights">
-        <th>Flight Search Results</th>
-        <tr>
+      <thead>
+        <th>
           <td>Date</td>
           <td>Flight</td>
           <td>From > To </td>
           <td>Plane</td>
-        </tr>
+        </th>
+      </thead>
+      <tbody id="flights">
       </tbody>
-
-
     </table>
-  <!-- </ul> -->
-</script>
-
-<script id="resultsView" type="text/template">
-  <ul id="flights">
-
-  </ul>
+  </div>
 </script>
 
 <script id="flightView" type="text/template">
-  <h1>{{= number }} Details</h1>
-  <h2>Origin: {{ origin }} </h2>
-  <h2>Destination: {{ destination }} </h2>
-  <h3>Date: {{ date}}</h3>
-  <p>Plane Layout:</p>
+  <table>
+  <thead>
+    <th>
+      <td>Date</td>
+      <td>Flight Number</td>
+      <td>Route</td>
+    </th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{= date}}</td>
+      <td>Flight {{= number}}</td>
+      <td>{{=origin}} > {{=destination}}</td>
+      <td>{{= columns}}</td>
+    </tr>
+  </tbody>
+  </table>
 </script>
-<!-- <p>Rows: {{# airplane.rows }}</p>
-<p>Columns: {{# airplane.columns }}</p> -->
+
+<script id="planeView" type="text/template">
+  <div id="planeLayout">
+    <p>Plane Layout:</p>
+    <p>{{= columns}}</p>
+    <table class="seats">
+      <tr>
+        <td></td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="selectSeat">
+    <div id="seatSelected"></div>
+    <button id="confirmSeat">Select Seat</button>
+  </div>
+</script>

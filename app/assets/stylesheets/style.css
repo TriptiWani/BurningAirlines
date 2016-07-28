@@ -9,4 +9,14 @@ div#plane {
     float: left;
     margin-left: 1.5em;
     margin-top: 1.5em;
+<<<<<<< HEAD
 }*/
+=======
+}
+td.planeSeats {
+  border: 1px solid black;
+  /*border-color: black;*/
+  border-width: thin;
+  width: 5em;
+}
+>>>>>>> bca27085f47618fc1296e0a07f51411c9c830c18

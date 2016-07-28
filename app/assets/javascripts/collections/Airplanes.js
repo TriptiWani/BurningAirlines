@@ -1,8 +1,8 @@
 var app = app || {};
 
-app.Flights = Backbone.Collection.extend ({
+app.Airplanes = Backbone.Collection.extend ({
   url: '/airplanes',
-  model: app.Airplanes,
+  model: app.Airplane,
 
   initialize: function() {
     this.on('add', function () {
