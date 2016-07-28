@@ -6,6 +6,8 @@ app.FlightListView = Backbone.View.extend({
     'click td#flight': 'showFlightDetails'
   },
   render: function(results) {
+    $('#flights-table').css( "display", "inline" );
+    
     var $flightNumber = $('<td id="flight"></td>');
     $flightNumber.text(this.model.get('number'));
 
@@ -18,7 +20,6 @@ app.FlightListView = Backbone.View.extend({
     var $flightOriginDestination = $('<td></td>');
     $flightOriginDestination.text(this.model.get('origin')+ ' > ' + this.model.get('destination'));
 
-
     $flightDate.appendTo(this.$el);
     $flightNumber.appendTo(this.$el);
     $flightOriginDestination.appendTo(this.$el);
@@ -28,5 +29,6 @@ app.FlightListView = Backbone.View.extend({
   showFlightDetails: function() {
     console.log('Clicked');
     app.router.navigate('flights/'+ this.model.get('id'), true);
+
   }
 });
